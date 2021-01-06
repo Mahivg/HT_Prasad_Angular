@@ -1,0 +1,303 @@
+Email:
+subramaniant05@gmail.com,
+prasadashok@hotmail.com
+
+WWW => World wide web
+
+	Basic Web Components :
+	
+		1. HTML
+		2. CSS , CSS3 (flex : grid)
+		3. Javascript, ES5, ES6
+		
+	Browser => Browser Engine
+				Chrome(client Tool)(ES6), Mozilla, Edge, IE (ES5),
+
+	HTML
+		Its not a programming language
+		
+		Tag based programming
+		
+			<open-tag></close-tag>
+			<h1 id="" name="" style="" class=""> </h1>, <img />
+	Basic structure of html
+		extension .html
+		<html>
+			<head>
+				Additional info
+			</head>			
+			<body>
+				content | view port
+			</body>
+		</html>
+		
+			
+	1. Text based Tags
+	
+		Headings : h1,h2,h3,h4,h5,h6
+		
+	Element type
+	
+		1. Block elements
+			Takes entire width irrespective of content size.
+			Always starts in new line
+			it allows user to play with their height and width
+		2. Inline Elements
+			Takes only width of content
+			Cant play with their height and width
+			
+		3. Inline-block-elements
+			same as inline elements  
+			expect we can control over height and width
+	
+		display: block | inline | inline-block;
+		
+		Rules :
+		
+			Block => inline  (correct)
+			Inline => block (block will dominate)(wrong)
+			
+			
+		Form tags
+			
+		Grouping tags
+			
+			section  => Large category, block grouping
+			
+			div => sub-category, block grouping
+			
+			span => inline grouping
+			
+	CSS
+		Cascading Style Sheet
+		
+		key : value
+		
+		CSS3 => 3rd version
+		
+		scss | sass => CSS preprocessor => compiler => css
+		
+		3 ways to add css to your html
+			
+				1. Inline styling => specificity => 100
+					<p style="color: red;" > </p>
+				2. Internal styling
+					<style> </style>
+					element selector 					
+						h1, h2, h3 { }
+					based on Attribute
+						h2#secondh2{}
+						
+					class selector
+						CSS class => 
+						.myClass {
+							font-size: 30;
+							color: grey;
+						}
+						
+						<h4 class="myClass myClass2 myClass3"> </h4>
+						
+						<div class="myClass"> </div> 
+						
+						
+						Pseduo styling : 
+							div#someiD > p {
+								
+							}
+							
+							div + p {
+								
+							}
+							
+							table {
+							
+							tr:nth-child(odd) { }
+							
+							p:first-child, last-child, nth-child(4), nth-child(odd | even)
+				3. External styling
+				
+					create a file with extension .css => css files =< styling files
+					
+					
+				element | identified-element | .class {
+					key: value;
+					key: value;
+				}
+				CSS units :
+
+					sizing => percentage(%)
+					
+					pixel (px),
+					font : em, rem => relative unite
+					
+						Div parent => fontsize- 16px
+						
+							div child => 0.5rem => 16px
+				
+			Text-based stylings 
+				
+				color :
+				named-values
+					red, green,blue, yellow,  lightblue, lightyellow
+				variation
+				
+					Red, Green, Blue => primary color 
+					
+						color : #0-f => 0,1,2,3,4,5,6,7,8,9,a,b,c,d,e,f
+								RGB
+						color: #fff; white; #000; black
+						
+						color: #06e;
+						
+						color: #0d6d41; 
+						
+						color: rgb(0,0,0) => 0 -> 255
+						
+				font-size: 20px;
+				font-family: 
+				
+				text-align: center | right | left | justify
+				
+				
+				display : block , inline, inline-block, none
+				
+				Layouts :
+				
+					display: table | flex | grid;
+						
+							
+					
+				Visiblity
+				
+					visibility : hidden | visible
+					
+					display: none | block;
+					
+			
+			
+			Element Box Model
+			
+				p => Final computed view 
+				
+					<p> Test </p>
+					
+					<p> Test 2 </p>
+					
+					
+						4 properties
+						
+							content => content
+							
+							padding => distance b/w content and corner borders
+							
+							border => corder
+					
+							margin => distance bw subordinate
+							
+							{
+								padding: 10px;
+								margin: 10px;
+								margin: 10px 20px; top-bottom left-right
+								padding-top: 10px;
+								
+									=> padding-top : 10px;
+									=> padding-right : 10px;
+									=> padding-bottom: 10px;
+									=> paddding-left: 10px;
+									
+								border: width of border type of border color of border;
+								
+								border : 1px solid red;
+								
+							
+							}
+					
+					Test
+					
+					Test 2
+					
+						
+			Positioning
+				
+					position: static | initial |Initial
+					
+					position: fixed | absolute | relative
+					
+					top | left | right | bottom
+					body -> position -> relative
+					
+					parent -> relative
+					
+						child -> absolute
+						
+			Transform
+			
+				transform : rotate | scale | translate
+				
+					rotate
+					
+			Box-shadow
+			
+				box-shadow : horizonatal vertical blur spread color;
+				
+				box-shadow: 20px 20px 10px 5px black;
+				
+						
+					
+			Laying out :
+			
+			Parent:			
+				display: flex;
+				flex-direction: 
+				
+				// on X-axis || horizontally aligns
+				justify-content : flex-start | flex-end| center | space-between | space-around
+				
+				// on Y-axis || Vertically aligns
+				align-items : flex-start | flex-end| center | space-between | space-around
+				
+				
+				
+				
+				
+				
+				
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+					
+					
+
+		
+		
+	
+			
+		
+		
+			
+		
+			
+		
+	
+	
