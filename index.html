@@ -2,7 +2,6 @@
   <head>
     <title>My page</title>
     <link href="./styles.css" rel="stylesheet" />
-    <script src="./scripts.js"></script>
     <!-- <link
       rel="stylesheet"
       href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
@@ -19,7 +18,7 @@
     <nav><a href=""></a></nav>
 
     <section id="text-based" class="container">
-      <div id="headings">
+      <div id="headings" onclick="printConsoleOnClick()">
         <!-- Headings -->
         <h1>Prasad</h1>
         <h2 id="firsth2">Prasad</h2>
@@ -120,7 +119,7 @@
         <input />
         <br />
         <br />
-        <label for="inputTxt"> Text : </label>
+        <label for="inputTxt"> Name : </label>
         <input id="inputTxt" type="text" />
 
         <br />
@@ -178,7 +177,7 @@
         <!-- <input type="button" value="button" />
     <input type="submit" value="Submit" /> -->
 
-        <button type="button">Button</button>
+        <button type="button" onclick="extractFormValues()">Button</button>
         <button type="submit">Submit</button>
       </form>
     </div>
@@ -206,5 +205,10 @@
     <footer>
       <a></a>
     </footer>
+
+    <script>
+      console.log(1 + 1);
+    </script>
+    <script src="./scripts.js"></script>
   </body>
 </html>

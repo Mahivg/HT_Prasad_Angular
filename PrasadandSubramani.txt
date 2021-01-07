@@ -254,11 +254,226 @@ WWW => World wide web
 				justify-content : flex-start | flex-end| center | space-between | space-around
 				
 				// on Y-axis || Vertically aligns
-				align-items : flex-start | flex-end| center | space-between | space-around
+				align-items : flex-start | flex-end | center | space-between | space-around
+				
+		Javascript
+		
+			data variables and  functions
+			
+			Global level objects
+			
+				window, document
+				
+				window.
+				
+				document.
+				
+			data types
+			
+				number, string, booleab, Date
+				
+				undefined, null, NaN,
 				
 				
 				
+			varible keywords
+			
+				var, let and const
 				
+				var i = 1;
+				
+				typeof(i)
+				
+				"number"
+				
+			Dynamic Typing || run time typing
+			
+			//var name = "test";
+			
+			function getName() {
+			
+				let name = "test";
+				const PI = 3.14;
+				return name;
+			}
+			
+			
+			function getFullName() {
+				return name + "lastName";
+			}
+			
+			Array
+			
+				var d = [1,2,3,4,5];
+				d[0] = 1
+				d[1] = 2
+				d[2] = 3
+				var d1 = d.map(value => value * 2);
+				d1 = [2, 4, 6, 8, 10]
+				
+				var d3 = d1.filter(value => value % 2 == 0)
+				[2,4]
+				forEach
+				
+				d1.findIndex(3)= 2
+				
+				slice 
+				
+				d1.slice(2) => [3,4,5]
+				d1.slice(1, 4) => [2,3,4,5]
+				d5 = d1.slice(0, defaulr(end of arrray) => [[1,2,3,4,5]
+				
+				typeof(d) => object 
+				
+				
+				
+			JSON type, Javascript Object Notation
+			
+				var name = "Magesh"				
+				var age = "25";
+				
+				var person = {				
+					name: "magesh",
+					age: 26
+				};
+				var person1 = {				
+					name: "magesh",
+					age: 26
+				};
+				
+				var name = person["name"];
+				
+				var salary = person["his salary"];
+				
+				
+				Strings
+					"Test", 'test', `test`;
+				
+				console.log("My Name is " + name + " and age is " + age);
+				
+				
+				
+				console.log('My Name is ' + name + ' and age is' + age);
+				
+				
+				console.log(`My Name is ${name} and age is ${age}
+						hkjhjads
+						
+						asbjasdasd`);
+				
+				My Name is Magesh and age is 26
+				
+			
+				JSON.stringify(person)
+				
+				TWO objects are equal
+				
+					person == person1 // false 
+					
+				JSON.stringify(person) == JSON.stringify(person1) => true
+				
+				var res = serive.getVlaue();
+				
+				if(res) {
+					
+				}
+				
+				
+				if
+					truthy || false
+					
+					if(true, obj {}, 1, "3e3ed")
+					
+					if(false, 0, null, undefined, "")
+				
+				else if
+				
+				for(var i = 0; i < n; i++){}
+				
+				while(3){}					
+				
+				Dynamic Typing => Disadvantage				
+				
+				var d = "test";
+				
+				typeof(d) => "string";
+				
+				d = 10;
+				
+				typeof(d) => "number";
+				
+				1 + 1 => 2
+				
+				"1" + "1" => 11
+				
+				function add(num1, num2) {				
+					return num1 + num2;
+				}
+				
+				add(1,1) => 2
+				
+				add("1", "1") => "11";
+				
+		Javascript into applicaiton
+		
+			<script> tag on head
+			
+			file => .js => 
+			
+			
+			
+		HTTP calls
+			interacting with outside apps
+			
+				var xHttp = new XMLHttprequest();
+				
+				xHttp.open('GET', "www.google.com");
+				
+				xHttp.send();
+				
+				xHttp.onReadyStateChange = function() {
+				
+					if(this.readyState == 4 && this.status == 200 ) {
+					
+					}
+				}
+				
+		
+		Typescript .ts
+		
+			superset of javascript
+			
+				Base javscript
+				
+			TSC => typescript .ts to javascript .js
+				
+		Typscript
+			
+			tsc filename =>
+			
+		Environment setup
+		
+			VS Code
+				ESLint
+				Prettier
+				Debugger for chrome
+				Angular Essentials John papa
+				Angular snippets
+				
+			
+			Nodejs
+				node -version
+				npm -v
+			
+				npm 
+				
+			npm install -g typescript
+				
+				tsc -v
+				
+			npm install -g @angular/cli
+			
+			
 				
 				
 				
