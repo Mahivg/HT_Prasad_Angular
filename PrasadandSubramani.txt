@@ -471,9 +471,173 @@ WWW => World wide web
 				
 				tsc -v
 				
-			npm install -g @angular/cli
+			npm install -g @angular/cli			
 			
+		
+		Typescript 
+		
+			typed javascript
+		
+			typescript compile 
+				typescript => javascript				
+						mention => es6, es2015
+		
+			object oriented programming
 			
+				class, interface
+				
+			types: 
+			
+				number, string, boolean 
+				
+				null, undefined
+			
+				var myName: string;
+				
+				object
+				
+				Arrays
+				
+				Tuple 
+				
+				var myTuple: [number, string]
+				
+				myTuple = [1, "2"];
+
+				enum Role { ADMIN, USER } 
+				
+				let myEnum: Role;
+				
+				myEnum = Role.ADMIN | Role.USER
+				
+				var confused: any;
+				confused = 1;
+				confused = "test";
+				
+				var assumption: number | string; // Union
+				
+				function add(num1, num2) {
+				
+					return num1 + num2;
+				}
+				
+				function add(num1: number, num2: number) : number {				
+					return num1 + num2;
+				}
+				
+				var added = add(1,2);
+				
+				
+				
+			Angular
+			
+				Node => browser engine away from browser
+					node package manager => npm
+					
+						npm install => 
+						
+						npm install -g typescript => typescript => system level
+						
+							tsc 
+							
+						project level
+						
+							npm install "some library name"
+							npm install "some library name"
+							npm install "some library name"
+							npm install "some library name"
+							npm install "some library name"
+							
+							Prasad => node_modules => some library name => 4.0.0							
+																		=> 4.2.0
+							
+							
+							npm --init
+								
+							package.json => 
+							
+								{
+									dependencies : {
+										"some library name" : "4.2.0",
+										"some library name" : "4.0.0"
+										"some library name" : "4.0.0"
+										"some library name" : "4.0.0",
+										"bootstrap" : "~3.3.10"
+									}
+								
+								}
+								
+							package-lock.json
+							
+								bootstap 
+								
+							
+								
+							Magesh => 
+							
+								npm install bootstrap
+							
+								package.json
+								Node_modules
+								npm install =>
+								
+							Javascript libraries => node based javascript frameworks
+							
+								
+				
+					script.js => index.html
+					
+					
+				Angular					
+					package.json => angular libraries
+					tsconfig.json => typescript
+					
+					Node => webpack => bundle
+						 => ivy renderer => html + javscript => JSX
+						 
+				Best enterprise application
+				
+				Angualr 
+				
+					1.X => AngularJs => javascript
+					
+					2.X => typescript => Angular  => Jit compliler => typescript.2.0
+					
+						core concept
+						
+						every 6 month =>
+						
+						backward-compatibility = > 9 to 10 <-> 10 - 9 		
+					
+						
+					10.X => ivy renderer => 4.0 => any
+					
+					Component based MVC => Model View Controler
+					
+					nav-bar component
+						controller
+						view
+						Model
+						css
+					
+					side-bar-component
+						controller
+							var name
+							data manipulation
+						view
+							name							
+						Model
+						css
+					
+					
+					angular/cli
+					
+						command promt => ng --version
+						
+						ng 
+					
+				
+				
 				
 				
 				

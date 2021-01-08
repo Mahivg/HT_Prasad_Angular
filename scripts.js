@@ -19,12 +19,11 @@ var addition = function(num1, num2) {
 
 var d = d => d* 2;
 
-array.map(function(d){
-    return d * 2;
-});
+d = [1,2,3,4,5];
 
-array.map(d => d *2);
-array.map(d);
+d = ["1","2"];
+
+d = [1, "2", {name: "name"}];
 
 
 var additionL = (num1, num2) =>  num1 + num2 ;
