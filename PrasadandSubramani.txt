@@ -619,7 +619,7 @@ WWW => World wide web
 						view
 						Model
 						css
-					
+						<app-nav> </app-nav>
 					side-bar-component
 						controller
 							var name
@@ -627,21 +627,145 @@ WWW => World wide web
 						view
 							name							
 						Model
-						css
-					
+						css					
 					
 					angular/cli
 					
 						command promt => ng --version
 						
 						ng 
+				Angular
+					Single page application
+					
+						only one fule with html tag						
+					
+						<html>
+							<body>	
+								<div>							
+									placeholder
+								</div>
+							</body>						
+						</html>
+						
+					Angular component based
+						parts 
+						
+						Root component 
+						
+							child
+								child
+								
+								Functionality sepeatred
+								
+					Angular cli 
+					
+						ng commands
+						
+						Creating a project
+						
+						
+					1. ng new ApplicationName
+					
+						ng new MyFirstApp --styles=css
+						
+						1. Routing include ?
+						
+						2. What type of Css?
+						
+						Angular will give a seed applicaiton
+							
+							needed dependencies -> package.json
+							customize
+							
+						
+							
+							
+							<body>
+								<app-nav>
+								<app-home>
+								
+								<app-footer></app-footer>
+							</body>
+				
+				
+				Angular defaulr module
+				
+				App Module => root module
+				App component => root component
+				
+					modules
+						Product Module
+						Shopping module
+						
+						RoutingModule => Routing components, services, are included to our applicationb
+						
+					different component
+						
+					services
+					
+					Product Module
+						different component
+							list component
+							view component
+						services
+					
+					Shopping module					
+						different component
+						services
+					
+					Payment module					
+						different component
+						services
+					
 					
 				
+				package	
+				
+					different dll
 				
 				
 				
+				Root component?
+
+					in main.ts
 				
+				ng serve => by default localhost:4200
+				ng serve --port=5300 => localhost:5300
+				
+				SPA 
+				
+					html => index.html
 					
+					in Index.html => only we can see bootstrap component => app-root
+					
+					
+			Component
+			
+				normal TS class
+				
+				with annotated or decorated wit @Component
+				
+				h1 {
+					color: red;
+				} => <h1> </h1>
+				
+				.h1 {
+				}
+				
+				input[type="text"] {
+				
+				}
+				
+				@Component({
+					selector : 'app-root' // <app-root> </app-root>
+					selector : '.app-root' // <div class="app-root">
+					selector : '[app-root]' // <div app-root>,
+					
+					template: "<h1> Test </h1>",				
+					templateUrl : "./app-component.html",
+					styles: [],
+					styleUrl: "./app-component.css"
+				})
 					
 					
 					
