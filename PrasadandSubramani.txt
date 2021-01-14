@@ -769,11 +769,67 @@ WWW => World wide web
 					
 					
 					
+			ng generate component component-name
+			
+			ng g c component-name			
+			
+			ng generate directive directive-name
+			
+			ng g d directive-name
+			
+			ng g s service-name
 					
 					
 					
 					
+			ShoppingCart
+			
+				Login Page
+					=> login-component
+				
+				Product 
+					ProductList => add button
 					
+						=> product-list-component
+					
+					ProductDetail
+						=> product-detail-component
+				
+				Cart
+					CartList
+					=> cart-list-component
+					
+					=> Checkout
+					
+						** checkout-component
+						
+				Data binding
+				
+					Accesing data
+
+					One way data binding
+					
+						Controller to View
+							a = 10;
+							String Interpolation
+								{{ a }} => 10 // {{ expression which can be evaluvated by JS engine }} => {{ 1 + 1 }}
+							property binding
+							
+								[] => 
+								textContent= "{{1 + 1}}" // String interpolation
+								[textContent]="1+1" // property binding						
+						
+						View to Controller
+						
+							Event binding
+							
+								() =>
+								
+								onClick  => (click)= "function from controller"
+								onMouseOver => (mouseover)
+						
+					Two way					
+						Combination of above two
 					
 					
 					

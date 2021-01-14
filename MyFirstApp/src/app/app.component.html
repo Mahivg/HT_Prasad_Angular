@@ -1,4 +1,14 @@
 <div class="container">
   <h1>My First App Works..</h1>
   <my-test></my-test>
+
+  <h4>My A value is : {{ a }}</h4>
+
+  <!-- innerHTML, textContent, href, type,  -->
+  <h4 textContent="{{ a }}"></h4>
+  <h4 [textContent]="a" (click)="onH4Click($event)"></h4>
+
+  <label> Test Inputx</label>
+  <input type="text" id="myText" #myText />
+  <button (click)="onTextSubmit(myText)">text</button>
 </div>
