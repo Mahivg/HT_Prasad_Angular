@@ -828,12 +828,35 @@ WWW => World wide web
 								onClick  => (click)= "function from controller"
 								onMouseOver => (mouseover)
 						
-					Two way					
+					Two way			
+						Will come once we see About FORMS
 						Combination of above two
+						
+				
+				document.getElementById
+				
+				
+				Template Reference 
+				
+					<div #myDiv>
+					</div>
 					
+					<input id='test" #myText/>
+					
+					// var myText = document.getElementById('test');
 					
 					
 				
+					
+				<form>
+				
+				
+					<input id='test" #myText/>
+					
+					<input id='test" #myText/>
+					
+				Angular Form
+					
 				
 				
 				

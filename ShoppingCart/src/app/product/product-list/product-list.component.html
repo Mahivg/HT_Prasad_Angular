@@ -1,1 +1,18 @@
-<p>product-list works!</p>
+<div>
+  <div id="product-list-container">
+    <div
+      id="product-list-item"
+      *ngFor="let prod of products"
+      class="d-flex mt-4 prod-list-card"
+    >
+      <div id="left">
+        <img [src]="prod.imageUrl" class="img-fluid prod-list-img" />
+      </div>
+      <div id="right" class="ml-4">
+        <h2>{{ prod.name }}</h2>
+        <p>{{ prod.description }}</p>
+        <p>Price : Rs.{{ prod.price }}</p>
+      </div>
+    </div>
+  </div>
+</div>
