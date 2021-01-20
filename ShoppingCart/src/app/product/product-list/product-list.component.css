@@ -5,6 +5,7 @@
 
 .prod-list-card {
   box-shadow: 20px 20px 7px -15px #afafaf;
+  cursor: pointer;
 }
 
 .prod-list-card div#right {

@@ -1,1 +1,8 @@
-<p>my-second works!</p>
+<p>Second component</p>
+
+<p>MSG : {{ msg }}</p>
+
+<app-my-third
+  [toMyChild]="myObj"
+  (myEvent)="callFromChild($event)"
+></app-my-third>

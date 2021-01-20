@@ -1,10 +1,12 @@
 <ht-nav-bar></ht-nav-bar>
 <div class="container">
   <!-- <h2>App component</h2> -->
+
   <ht-login></ht-login>
 
   <ht-cart-list></ht-cart-list>
+
   <ht-checkout></ht-checkout>
-  <ht-product-detail></ht-product-detail>
-  <ht-product-list></ht-product-list>
+
+  <ht-product-list [products]="products"></ht-product-list>
 </div>

@@ -856,9 +856,124 @@ WWW => World wide web
 					<input id='test" #myText/>
 					
 				Angular Form
+				
+			
+			Directives :
+			
+			
+				Inbuilt angular directive
+				
+				
+					Attribute Directives
+					
+						it will add some additional behaviour to our html element
+						
+							style, class
+							
+							
+							ngStyle, ngClass
+							
+							<h1 style="color: red" class="myClass1" > Test </h1>
+							
+							Controller
+								applyRed: boolean;
+								
+								applyGreen: boolean;
+							
+							<h1 [ngStyle]="> Test </h1>
+							[ngStyle] = "{ 'color: applyRed ? 'red' : 'green' }" 
+							
+							[ngClass] = "{ 'myClass' : applyClass, 'myClass2' : applyClass2 }";
+				
+					Structural Directive
+					
+						it will play with DOM Tree
+						
+						*
+						
+						ngFor, ngIf
+					
+						<h1 *ngFor="let i of [1,2,3,4,5]"> Test </h1>
+						
+						<ng-container *ngIf="showDivElse.length > 0">
+							<div *ngFor="let i of sampleArr" >
+							
+								<div>
+								
+									{{ i }}
+								
+								<div>
+							
+							</div>
+						</ng-container>
+						<h1 *ngIf="applyGreen"> Test </h1>
+					
+
+		wrappers					
+				
+				ng-template
+					short html elemens
+				
+				ng-container
+				
+					larger html
+				
+				ng-content
+				
+				
+		Appcomponent
+		
+			Navbar component
+		
+			product-list-component => view
+			
+				product-detail-component
+				
+		Component Interaction
+		
+		
+			Parent to Child
+			
+				@Input
+					Getting data from Parent
+					[] => property binding
+					
+					child having one variable => product
+					
+					parent having an object with value => selectedProduct
+					
+					[product]="selectedProduct"				
 					
 				
+				@Output
 				
+					myCustomOut = new EventEmitter<Product>();
+					
+					() => event binding
+					(click) => Click Event
+					
+					(click)="MethodFromCOmponent($event)"
+					
+					(myCustomOut)					
+			
+			Cross component
+			
+			
+		Now All component are visible
+		
+		Appcomponet
+		
+			recieves logging status
+			receive app
+			Login			
+				login() => emit logging status
+				user emit
+			
+			only after logged in show
+			push to product list
+				product list
+			
+					product detail
 				
 				
 				

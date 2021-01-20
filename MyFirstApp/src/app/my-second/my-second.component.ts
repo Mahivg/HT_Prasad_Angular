@@ -7,9 +7,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MySecondComponent implements OnInit {
 
+  public myObj = { name : "test", age: 10 };
+
+  public msg: string;
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  callFromChild(childEvent: string) {
+    console.log(childEvent);
+    this.msg = childEvent;
   }
 
 }

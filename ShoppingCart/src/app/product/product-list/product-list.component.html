@@ -1,9 +1,10 @@
 <div>
-  <div id="product-list-container">
+  <div id="product-list-container" *ngIf="!productSelected">
     <div
       id="product-list-item"
       *ngFor="let prod of products"
       class="d-flex mt-4 prod-list-card"
+      (click)="onProductSelected(prod)"
     >
       <div id="left">
         <img [src]="prod.imageUrl" class="img-fluid prod-list-img" />
@@ -14,5 +15,10 @@
         <p>Price : Rs.{{ prod.price }}</p>
       </div>
     </div>
+  </div>
+
+  <div *ngIf="productSelected">
+    <button (click)="backToList()" class="btn btn-primary"><- Back</button>
+    <ht-product-detail [product]="selectedProduct"></ht-product-detail>
   </div>
 </div>

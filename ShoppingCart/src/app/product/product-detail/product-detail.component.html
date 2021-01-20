@@ -1,1 +1,19 @@
-<p>product-detail works!</p>
+<div id="product-detail-container">
+  <div class="product-detail-card d-flex m-2 justify-content-around">
+    <div class="product-details">
+      <img src="{{ product.imageUrl }}" class="img-fluid product-detail-img" />
+      <h2>{{ product.name }}</h2>
+      <p>{{ product.description }}</p>
+      <p>Price : Rs. {{ product.price }}</p>
+    </div>
+    <div class="product-actions d-flex flex-column justify-content-center">
+      <input class="form-control" type="number" id="quantity" />
+      <button style="margin-top: 20px" class="btn btn-success">
+        Add To Cart
+      </button>
+      <button style="margin-top: 20px" class="btn btn-success">
+        View Cart
+      </button>
+    </div>
+  </div>
+</div>
