@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { MyTestComponent } from './my-first/my-test.component';
 import { MySecondComponent } from './my-second/my-second.component';
 import { MyThirdComponent } from './my-third/my-third.component';
+import { MyFirstService } from './shared/my-first.service';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { MyThirdComponent } from './my-third/my-third.component';
   imports: [
     BrowserModule
   ],
+  // providers: [MyFirstService],
   providers: [],
   bootstrap: [AppComponent]
 })

@@ -891,7 +891,7 @@ WWW => World wide web
 						
 						*
 						
-						ngFor, ngIf
+						ngFor, ngIf, ngShow, ngHide
 					
 						<h1 *ngFor="let i of [1,2,3,4,5]"> Test </h1>
 						
@@ -937,7 +937,7 @@ WWW => World wide web
 				@Input
 					Getting data from Parent
 					[] => property binding
-					
+												@Input
 					child having one variable => product
 					
 					parent having an object with value => selectedProduct
@@ -958,6 +958,8 @@ WWW => World wide web
 			
 			Cross component
 			
+				using parent communicate with child
+			
 			
 		Now All component are visible
 		
@@ -977,24 +979,157 @@ WWW => World wide web
 				
 				
 				
+		Object
+		
+			Singleton
+			
+			emp1 => first-component 
+						emp1.setName("magesh")
+					second-component
+						emp1.getName()
+						
+			Dependecny Injection
+			
+				object is created and available somewhere		
 				
-				
-				
-				
+					emp1 => first-component
+							Same reference
+							constructor(private emp1 : Employee){}
+							emp1.setName("magesh")
+						second-component
+							same reference
+							constructor(private emp2 : Employee){}
+							emp2.getName() => magesh
+							
+		constructor(private emp1 : Employee){}
+		
+		Life cycle methods		
+		
+			To detect the changes only in @Input type variable
+			ngOnChanges(simpleChanges: SimpleChanges) {  => OnChanges
+				console.log(simpleChages);
+				{
+					oldValue: {},
+					newValue: {}
+				}
+			}			
+			
+			
+			After constructor Initialized
+			
+			ngOnInit(){ => OnInit
+				varible declaration,
+				startup actions
+			}			
+			
+			any changes in ur view			
+			ngDoCheck(){}
+			
+			ngAfterContentInit(){}
+			
+			ngAfterContentChecked(){}
+			
+			ngAfterViewInit(){}			
+			
+			ngAfterViewChecked(){}
+			
+			// whenever ur component gets out of DOM Tree
+			ngOnDestroy(){
+				// clean up code
+			}
+		
+		
 				
 				
 					
+					
+					private p1: Product  = new Product();
+					
+					23438u4u9845
+					
+					
+					
+			Angular Services are singleton
+			
+				Instance creation control not in user hand
+				
+				Angular framework will manage the instance creation
+				
+				Dependency Injection pattern
+				
+				Employee clss
+					xx01 -> instance will be created
+					first-component
+						let emp1 : Employee
+						
+						constructor(emp1: Employee){}
+					
+					second-component					
+						let emp2: Employee
+						
+			Steps:
+			
+				Create a class -> MyFirstService
+					create varaibles
+					
+			AppModule			
+				providers: [MyFirstService]
 					
 
-		
-		
-	
+			wherever u need, in that constructor give that variable name, it will get injected
 			
+			
+			@Injectable({
+				providedIn : 'root'
+			})
+			class MyFirstService {
+			
+			
+			}
+			
+		AppModule
+			declarations: [
+				AppComponent, XX01
+				MyTestComponent,
+				MySecondComponent,
+				MyThirdComponent
+			],
+			imports: [
+				BrowserModule
+			],
+			//providers: [MyFirstService]
 		
+			ProductModule
+				declarations: [ XX02
+					MyTestComponentP, XX03
+							providers: [ProductService]
+					MySecondComponentP,
+					MyThirdComponentP
+				],
+				imports: [
+					BrowserModule
+				],
+				providers: [ProductService]
+			
+			CartModule
+				declarations: [XX01
+					MyTestComponentC,
+					MySecondComponentC,
+					MyThirdComponentC
+				],
+				imports: [
+					BrowserModule
+				],
+				providers: []
+	
+attributeDirective	
+	<h1 showGreen></h1>		
+		el: ElementRef
 		
 			
-		
-			
-		
-	
-	
+		Strucutral directive
+	<wrapper>
+		<h1 hideOdd></h1>	
+	</wrapper>	
+		vcr: ViewContainerRef	
+		vcr.clear()

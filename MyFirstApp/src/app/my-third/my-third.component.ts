@@ -1,11 +1,11 @@
-import { Component, Input, OnInit, EventEmitter, Output } from '@angular/core';
+import { Component, Input, OnInit, EventEmitter, Output, OnDestroy } from '@angular/core';
 
 @Component({
   selector: 'app-my-third',
   templateUrl: './my-third.component.html',
   styleUrls: ['./my-third.component.css']
 })
-export class MyThirdComponent implements OnInit {
+export class MyThirdComponent implements OnInit, OnDestroy {
 
   @Input('toMyChild')
   public myObj1: any;
@@ -24,6 +24,10 @@ export class MyThirdComponent implements OnInit {
   sendMessage() {
     const msg = "Hi, I am from your child My-Third-Component";
     this.myEvent.emit(msg);
+
+  }
+
+  ngOnDestroy() {
 
   }
 

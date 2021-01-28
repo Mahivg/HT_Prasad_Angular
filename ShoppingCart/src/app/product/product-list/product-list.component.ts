@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Product } from 'src/app/model/Product';
+import { AppService } from 'src/app/shared/app.service';
 
 @Component({
   selector: 'ht-product-list',
@@ -8,14 +9,16 @@ import { Product } from 'src/app/model/Product';
 })
 export class ProductListComponent implements OnInit {
 
-  @Input()
+  // @Input()
   public products: Product[];
 
   public productSelected = false;
 
   public selectedProduct: Product;
 
-  constructor() { }
+  constructor(public appService: AppService) {
+    this.products = this.appService.getProducts();
+  }
 
   ngOnInit(): void {
   }

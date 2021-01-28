@@ -1,12 +1,13 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild, EventEmitter, Output, Input, OnDestroy, DoCheck } from '@angular/core';
 import { User } from '../model/User';
+import { AppService } from '../shared/app.service';
 
 @Component({
   selector: 'ht-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-export class LoginComponent implements OnInit {
+export class LoginComponent implements OnInit, OnDestroy, DoCheck {
 
   @ViewChild('userName')
   userNameInput: ElementRef;
@@ -14,17 +15,29 @@ export class LoginComponent implements OnInit {
   @ViewChild('password')
   passwordInput: ElementRef;
 
+  @Output()
+  onLogin = new EventEmitter<boolean>();
+
   strs: string[]
 
-  users: User[] = [
-    { name: 'Test', password: 'test1212' },
-    { name: 'Test1', password: 'test1313' },
-    { name: 'Test2', password: 'test1414' }
-  ];
+  // @Input()
+  users: User[];
 
-  constructor() { }
+  constructor(public appService: AppService) {
+    this.users = this.appService.getUsers();
+    console.log("Login component constructor called...");
+  }
 
   ngOnInit(): void {
+      console.log("Login Component Initialized.....");
+  }
+
+  ngOnDestroy() : void {
+    console.log("Login Component Destroyed..");
+  }
+
+  ngDoCheck(): void {
+    console.log("Login DO check....");
   }
 
 
@@ -37,13 +50,15 @@ export class LoginComponent implements OnInit {
     var user = this.users.find( u => u.name == userName);
     if(user) {
       if(user.password == password) {
-        alert("Logged in Successfully...");
+        // alert("Logged in Successfully...");
+        this.onLogin.emit(true);
       }
       else {
-        alert("Invalid Credentials...")
+        // alert("Invalid Credentials...");
+        this.onLogin.emit(false);
       }
     } else {
-      alert("Invalid Credentials...")
+      alert("Invalid Credentials...");
     }
   }
 }
