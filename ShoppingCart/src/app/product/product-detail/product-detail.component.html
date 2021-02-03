@@ -1,4 +1,7 @@
 <div id="product-detail-container">
+  <div>
+    <a class="btn btn-warning" routerLink="/products"> <-- Back</a>
+  </div>
   <div class="product-detail-card d-flex m-2 justify-content-around">
     <div class="product-details">
       <img src="{{ product.imageUrl }}" class="img-fluid product-detail-img" />
@@ -15,5 +18,12 @@
         View Cart
       </button>
     </div>
+    <!-- <component [input]="rest"></component> -->
+  </div>
+
+  <div>
+    <a class="btn btn-warning" routerLink="/products/p002"> <-- p002</a>
+    <a class="btn btn-warning" routerLink="/products/p003"> <-- p003</a>
+    <a class="btn btn-warning" routerLink="/products/p001"> <-- p001</a>
   </div>
 </div>

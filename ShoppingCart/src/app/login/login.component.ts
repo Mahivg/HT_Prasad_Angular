@@ -1,4 +1,5 @@
 import { Component, ElementRef, OnInit, ViewChild, EventEmitter, Output, Input, OnDestroy, DoCheck } from '@angular/core';
+import { Router } from '@angular/router';
 import { User } from '../model/User';
 import { AppService } from '../shared/app.service';
 
@@ -15,15 +16,15 @@ export class LoginComponent implements OnInit, OnDestroy, DoCheck {
   @ViewChild('password')
   passwordInput: ElementRef;
 
-  @Output()
-  onLogin = new EventEmitter<boolean>();
+  // @Output()
+  // onLogin = new EventEmitter<boolean>();
 
   strs: string[]
 
   // @Input()
   users: User[];
 
-  constructor(public appService: AppService) {
+  constructor(private appService: AppService, private router: Router) {
     this.users = this.appService.getUsers();
     console.log("Login component constructor called...");
   }
@@ -51,13 +52,19 @@ export class LoginComponent implements OnInit, OnDestroy, DoCheck {
     if(user) {
       if(user.password == password) {
         // alert("Logged in Successfully...");
-        this.onLogin.emit(true);
+        // this.onLogin.emit(true);
+        this.appService.setUserLoginStatus(true);
+        // Emitting user login status
+        this.appService.userLoggedClient.next(true);
+        this.router.navigateByUrl('/products');
       }
       else {
         // alert("Invalid Credentials...");
-        this.onLogin.emit(false);
+        // this.onLogin.emit(false);
+        this.appService.setUserLoginStatus(false);
       }
     } else {
+      this.appService.setUserLoginStatus(false);
       alert("Invalid Credentials...");
     }
   }

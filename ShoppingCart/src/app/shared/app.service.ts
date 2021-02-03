@@ -1,4 +1,5 @@
 import { Injectable } from "@angular/core";
+import { BehaviorSubject, Observable } from "rxjs";
 import { Product } from "../model/Product";
 import { User } from "../model/User";
 
@@ -6,6 +7,12 @@ import { User } from "../model/User";
   providedIn: 'root'
 })
 export class AppService {
+
+  private isUserLoggedIn: boolean = false;
+
+  userLoggedClient = new BehaviorSubject<boolean>(false);  // userLogged
+  userLoggedServer = this.userLoggedClient.asObservable(); // userLogged$
+
   users: User[] = [
     { name: 'Test', password: 'test1212' },
     { name: 'Test1', password: 'test1313' },
@@ -35,6 +42,18 @@ export class AppService {
 
   public setUsers(users: User[]) {
     this.users = users;
+  }
+
+  public getProductById(productId: string): Product {
+    return this.products.find(p => p.id === productId);
+  }
+
+  public setUserLoginStatus(status: boolean) {
+    this.isUserLoggedIn = status;
+  }
+
+  public getUserLoginStatus(): boolean {
+    return this.isUserLoggedIn;
   }
 
 }

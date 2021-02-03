@@ -958,7 +958,9 @@ WWW => World wide web
 			
 			Cross component
 			
-				using parent communicate with child
+				using parent communicate with child => @Input , @output
+				
+				Without mediator => Subjects => BehaviourSubject => Client, Server
 			
 			
 		Now All component are visible
@@ -1095,9 +1097,24 @@ WWW => World wide web
 				MyThirdComponent
 			],
 			imports: [
-				BrowserModule
+				BrowserModule, ProductModule
 			],
 			//providers: [MyFirstService]
+			
+			const productRoutes: Routes = [
+									  {
+										path: 'pfirst', //localhost:4200/first
+										component: MyTestComponentP
+									  },
+									  {
+										path: 'psecond',
+										component: MySecondComponentP
+									  },
+									  {
+										path: 'pthird',
+										component: MyThirdComponentP
+									  }
+									];
 		
 			ProductModule
 				declarations: [ XX02
@@ -1107,7 +1124,8 @@ WWW => World wide web
 					MyThirdComponentP
 				],
 				imports: [
-					BrowserModule
+					BrowserModule.
+					RouterModule.forChild(productRoutes)
 				],
 				providers: [ProductService]
 			
@@ -1133,3 +1151,119 @@ attributeDirective
 	</wrapper>	
 		vcr: ViewContainerRef	
 		vcr.clear()
+		
+	
+	Routing
+	
+		Based on URL change, u can see the component		
+		
+		localhost:4200/login => login component
+		
+	First step:
+	
+		1) RoutingModule -> Include in AppModule
+				if it is Rootmodule -> RouterModule.forRoot()
+				else 
+					RouterModule.forChild()
+		
+		2) Define routes ->
+		
+				For which path, which component
+				
+				There is a inbuild model type called Route.
+		
+		3) configure the routes
+		
+		4) define placeholder
+		
+			<router-outlet>
+				
+			</router-outlet>
+			
+		5) Define action to change using routerLink
+		
+				routerLink="first"
+		
+		
+		
+		App
+			localhost:4200/productDetail ->
+			productList
+			<a class="btn btn-primary" routerLink="productDetail"> ProductDetail </a>
+			
+			localhost:4200/productDetail/productDetail -> relativepath
+			localhost:4200/productDetail -> absolute path
+				productDetail
+					<a class="btn btn-primary" routerLink="/productDetail"> ProductDetail </a>
+					
+	Programatically redirecting routes: 
+	
+		1) request angular to provide router service
+		
+		2) use this.router.navigateByUrl('path of the component')
+		
+		3) this.router.navigate(['products']);
+		
+	Parametrized routing
+	
+		{
+		
+			path: 'products/:id', // id=""
+			path: 'products/p001 => id="p001"
+			component: ProductDetailComponent
+						id="p001"
+		}
+		
+		
+		localhost:4200/products/p001
+		['prodcts', 'p001']
+		
+		
+		localhost:4200/products/p001/details
+		['prodcts', 'p001', 'details']
+		
+	Route Protection
+	
+		login => no protection
+		
+		/products/
+		/prodcts/:id  => Need Protection
+		
+		In Angular
+			
+				Guard => Route Gaurd				
+				
+					Guard are nothing but a normal service class, having a method which returns a boolean.
+		
+		
+		publish -> subscribe
+		
+			Observable<Param>
+				Wrapper class => BehaviourSubject
+				
+			Observable<Employee>
+			Observable<Product>
+			Observable<Product[]>
+			
+			// Server
+			
+				.subscribe(p => 
+			
+				Observe
+				
+				Observer				
+				
+			Listening component
+				
+			// Client
+			
+			Emiting client
+			
+				Emit => Param
+	
+				
+	FORMS
+		PIPES
+	HTTP_CALLS
+		
+				

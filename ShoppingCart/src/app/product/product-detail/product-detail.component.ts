@@ -1,5 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { ActivatedRoute, ActivatedRouteSnapshot } from '@angular/router';
 import { Product } from 'src/app/model/Product';
+import { AppService } from 'src/app/shared/app.service';
 
 @Component({
   selector: 'ht-product-detail',
@@ -8,12 +10,20 @@ import { Product } from 'src/app/model/Product';
 })
 export class ProductDetailComponent implements OnInit {
 
-  @Input()
+  // @Input()
   public product: Product;// =  new Product('p001', 'Travel Bag', 'Used for travel purpose', 200, 'https://cdn.shopify.com/s/files/1/1882/4247/products/HWALK05_444_1000x1000.jpg?v=1571694919', true );
 
-  constructor() { }
+  productId: string;
+
+  constructor(private currentRoute: ActivatedRoute, private appService: AppService) { }
 
   ngOnInit(): void {
+    // console.log(this.currentRouteSS);
+    this.currentRoute.params.subscribe(rData => {
+      this.productId = rData['id'];
+      console.log(this.productId);
+      this.product = this.appService.getProductById(this.productId);
+    });
   }
 
 }

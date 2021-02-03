@@ -1,19 +1,21 @@
-<ht-nav-bar (onLogout)="onUserLoginStatusChange($event)"></ht-nav-bar>
+<!-- <ht-nav-bar (onLogout)="onUserLoginStatusChange($event)"></ht-nav-bar> -->
+<ht-nav-bar></ht-nav-bar>
 <div class="container">
-  <!-- <h2>App component</h2> -->
+  <router-outlet></router-outlet>
+  <!-- <h2>App component</h2>
 
   <ng-container *ngIf="!isUserLoggedIn">
     <ht-login (onLogin)="onUserLoginStatusChange($event)"></ht-login>
-    <!-- <ht-login
+   <ht-login
     [users]="users"
     (onLogin)="onUserLoginStatusChange($event)"
-  ></ht-login> -->
+  ></ht-login>
   </ng-container>
 
   <ng-container *ngIf="isUserLoggedIn">
     <ht-product-list></ht-product-list>
-    <!-- <ht-product-list [products]="products"></ht-product-list> -->
+    <ht-product-list [products]="products"></ht-product-list>
   </ng-container>
-  <!-- <ht-cart-list></ht-cart-list>
+  <ht-cart-list></ht-cart-list>
   <ht-checkout></ht-checkout> -->
 </div>

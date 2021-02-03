@@ -1,15 +1,41 @@
 <div class="container">
-  <h1>My First App Works..</h1>
-  <app-my-first></app-my-first>
-  <app-my-second></app-my-second>
+  <h1>App component Works..</h1>
+  <!-- <app-my-first></app-my-first>
+  <app-my-second></app-my-second> -->
 
-  <h4>My A value is : {{ a }}</h4>
+  <div class="m-2">
+    <a
+      routerLink="first"
+      routerLinkActive="link-active"
+      class="btn btn-primary m-2"
+    >
+      First
+    </a>
+    <a
+      routerLink="second"
+      routerLinkActive="link-active"
+      class="btn btn-warning m-2"
+    >
+      Second
+    </a>
+    <a
+      routerLink="third"
+      routerLinkActive="link-active"
+      class="btn btn-success m-2"
+    >
+      Third
+    </a>
+  </div>
 
-  <!-- innerHTML, textContent, href, type,  -->
+  <router-outlet></router-outlet>
+
+  <!-- <h4>My A value is : {{ a }}</h4>
+
+  innerHTML, textContent, href, type,
   <h4 textContent="{{ a }}"></h4>
   <h4 [textContent]="a" (click)="onH4Click($event)"></h4>
 
   <label> Test Inputx</label>
   <input type="text" id="myText" #myText />
-  <button (click)="onTextSubmit(myText)">text</button>
+  <button (click)="onTextSubmit(myText)">text</button> -->
 </div>

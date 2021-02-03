@@ -1,4 +1,6 @@
 import { Component, OnInit, EventEmitter, Output } from '@angular/core';
+import { Router } from '@angular/router';
+import { AppService } from '../shared/app.service';
 
 @Component({
   selector: 'ht-nav-bar',
@@ -7,16 +9,26 @@ import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 })
 export class NavBarComponent implements OnInit {
 
-  @Output()
-  onLogout = new EventEmitter<boolean>();
+  // @Output()
+  // onLogout = new EventEmitter<boolean>();
 
-  constructor() { }
+  isUserLoggedIn: boolean;
+
+  constructor(private appService: AppService, private router: Router) { }
 
   ngOnInit(): void {
+    this.appService.userLoggedServer.subscribe(ulData => {
+      console.log("Navbar userLoggedServer subscribe called...");
+      console.log(false);
+      this.isUserLoggedIn = ulData;
+    }); // It is listening becuase subscribe registered
   }
 
   logout() {
-    this.onLogout.emit(false);
+    // this.onLogout.emit(false);
+    this.isUserLoggedIn = false;
+    this.appService.setUserLoginStatus(false);
+    this.router.navigateByUrl('/login');
   }
 
 }

@@ -8,7 +8,34 @@ import { ProductDetailComponent } from './product/product-detail/product-detail.
 import { CartListComponent } from './cart/cart-list/cart-list.component';
 import { CheckoutComponent } from './cart/checkout/checkout.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
+import { RouterModule, Routes } from '@angular/router';
+import { ErrorPageComponent } from './error-page/error-page.component';
+import { AuthGaurd } from './shared/auth.gaurd';
 
+const appRoutes: Routes = [
+  {
+    path: 'login',
+    component: LoginComponent
+  },
+  {
+    path: 'products',
+    component: ProductListComponent,
+    canActivate: [AuthGaurd]
+  },
+  {
+    path: 'products/:id',
+    component: ProductDetailComponent,
+    canActivate: [AuthGaurd]
+  }, {
+    path: '',
+    redirectTo: 'login',
+    pathMatch: 'full'
+  },
+  {
+    path: '**',
+    component: ErrorPageComponent
+  }
+]
 @NgModule({
   declarations: [
     AppComponent,
@@ -17,10 +44,12 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
     ProductDetailComponent,
     CartListComponent,
     CheckoutComponent,
-    NavBarComponent
+    NavBarComponent,
+    ErrorPageComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    RouterModule.forRoot(appRoutes)
   ],
   providers: [],
   bootstrap: [AppComponent]

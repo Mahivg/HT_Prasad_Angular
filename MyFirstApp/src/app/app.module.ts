@@ -6,16 +6,46 @@ import { MyTestComponent } from './my-first/my-test.component';
 import { MySecondComponent } from './my-second/my-second.component';
 import { MyThirdComponent } from './my-third/my-third.component';
 import { MyFirstService } from './shared/my-first.service';
+import { RouterModule, Routes } from '@angular/router';
+import { Route } from '@angular/compiler/src/core';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
+
+const appRoutes: Routes = [
+  {
+    path: 'first',
+    //localhost:4200/first
+    component: MyTestComponent
+  },
+  {
+    path: 'second',
+    component: MySecondComponent
+  },
+  {
+    path: 'third',
+    component: MyThirdComponent
+  },
+  {
+    path: '', // default route
+    redirectTo: 'first',
+    pathMatch: 'full'
+  },
+  {
+    path: '**', // wild route
+    component: PageNotFoundComponent
+  }
+];
 @NgModule({
   declarations: [
     AppComponent,
     MyTestComponent,
     MySecondComponent,
-    MyThirdComponent
+    MyThirdComponent,
+    PageNotFoundComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    RouterModule.forRoot(appRoutes)
   ],
   // providers: [MyFirstService],
   providers: [],
