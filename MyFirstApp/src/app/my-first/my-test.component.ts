@@ -1,4 +1,5 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, ViewChild } from "@angular/core";
+import { NgForm } from "@angular/forms";
 import { User } from "../model/User";
 import { MyFirstService } from "../shared/my-first.service";
 
@@ -13,6 +14,8 @@ export class MyTestComponent implements OnInit {
     // myFirstService: MyFirstService;
     users: User[];
 
+    // @ViewChild('empForm') empForm: NgForm;
+
     //used for dependency injection
     constructor(public myFirstService: MyFirstService) {}
 
@@ -24,6 +27,11 @@ export class MyTestComponent implements OnInit {
       this.users.push(new User('test4', 'test1515'));
       console.log("From First component : After Push...");
       console.log(this.users);
+    }
+
+    public onFormSubmit(empForm: NgForm) {
+      console.log(empForm);
+      console.log(empForm.value);
     }
 
 

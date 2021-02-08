@@ -1,1 +1,87 @@
 <h1>My Test First Component works....</h1>
+
+<div class="m-2">
+  <h2>Employee details</h2>
+  <form #empForm="ngForm" (ngSubmit)="onFormSubmit(empForm)">
+    <div class="form-group">
+      <label class="control-label">Name</label>
+      <input
+        class="form-control"
+        id="name"
+        name="name"
+        type="text"
+        ngModel
+        #name="ngModel"
+        required
+        minlength="3"
+        maxlength="10"
+      />
+      <div class="m-2" *ngIf="name.errors && empForm.submitted">
+        <p
+          class="text-danger"
+          *ngIf="name.touched && name.dirty && name.errors.required"
+        >
+          *Name should not be empty
+        </p>
+        <p
+          class="text-danger"
+          *ngIf="name.touched && name.dirty && name.errors.minlength"
+        >
+          *Name should have more than 3 letter
+        </p>
+        <p
+          class="text-danger"
+          *ngIf="name.touched && name.dirty && name.errors.maxlength"
+        >
+          *Name cannot be more than 10 letters
+        </p>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label">Age</label>
+      <input
+        class="form-control"
+        id="age"
+        name="age"
+        type="number"
+        min="18"
+        max="45"
+        ngModel
+      />
+      <!-- <div class="m-2">
+        <p class="text-danger">* Age must be greater than or equal to 18</p>
+      </div> -->
+    </div>
+    <div class="form-group">
+      <label class="control-label">Desingation</label>
+      <input
+        class="form-control"
+        id="designation"
+        name="designation"
+        type="text"
+        ngModel
+      />
+    </div>
+    <div class="form-group">
+      <label class="control-label">Email</label>
+      <input
+        class="form-control"
+        id="email"
+        name="email"
+        type="email"
+        email
+        ngModel
+        #email="ngModel"
+      />
+      <div class="m-2" *ngIf="email.errors && empForm.submitted">
+        <p class="text-danger" *ngIf="email.touched && email.dirty">
+          *Enter valid email
+        </p>
+      </div>
+    </div>
+    <div class="form-group text-center">
+      <!-- <button class="btn btn-primary" type="submit" [disabled]="!empForm.valid"> -->
+      <button class="btn btn-primary" type="submit">Submit</button>
+    </div>
+  </form>
+</div>

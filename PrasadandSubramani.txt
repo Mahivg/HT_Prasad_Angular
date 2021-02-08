@@ -1247,7 +1247,7 @@ attributeDirective
 			
 			// Server
 			
-				.subscribe(p => 
+				.subscribe(
 			
 				Observe
 				
@@ -1265,5 +1265,64 @@ attributeDirective
 	FORMS
 		PIPES
 	HTTP_CALLS
+	
+	
+	FORMS:
+	
+		<input id="userName" type="text" />
 		
+		<input id="password" type="password" />
+	
+		let uName = document.getElementById("userName").value
+		let pass = document.getElementById("password").value
+	
+		{		
+			userName: uName,			
+			password: pass			
+		}
+		
+	Angular Way:
+	
+		1) FormsModule => "@angular/forms"
+		
+		2) <form> </form>
+		
+		3) Type of form:
+		
+			i) Template Driven
+				-> Form will be created in HTML then passed to Controller			
+			ii) Reactive Form
+				-> FOrm will be created in controller then binded to HTML
+		4) your data can be two way binding
+		
+			userName = "testtttttttttttt"
+			
 				
+			<input id="text" name="testName" [ngModel]="userName" />
+	
+			testtttttttttttt
+			
+		5) handling submit action
+		
+				<form (ngSubmit)="method()">
+				
+					input
+					
+					input
+					
+					<button></button>
+				</form>
+
+		
+	Template driven form
+	
+		Form need to be created in HTML
+		
+		gained form instance my using #myForm="ngForm" 
+		
+		We handled submit event and passed the form value (ngSubmit)="onForm(myForm)
+		
+		Add ngModel to all <input />
+		
+		
+		

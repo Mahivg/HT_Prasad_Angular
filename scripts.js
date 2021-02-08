@@ -25,7 +25,7 @@ d = ["1","2"];
 
 d = [1, "2", {name: "name"}];
 
-
+// num1 => {}
 var additionL = (num1, num2) =>  num1 + num2 ;
 var additionL = (num1, num2) => { console.log(d); return num1 + num2 };
 // Event Listeners
