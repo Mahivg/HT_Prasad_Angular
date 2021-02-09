@@ -1316,6 +1316,8 @@ attributeDirective
 		
 	Template driven form
 	
+		We included FormsModule into app Module
+	
 		Form need to be created in HTML
 		
 		gained form instance my using #myForm="ngForm" 
@@ -1324,5 +1326,100 @@ attributeDirective
 		
 		Add ngModel to all <input />
 		
+	Reactive forms
+	
+		ReactiveFormsModule include it in AppModule
+	
+		Form need to be created in Controller then pass it to HTML
 		
+		Bind it to HTML
+		
+		[formGroup], formControlName
+		
+		Submit eveny handler
+	
+		
+		{ name: "Magesh V.G", age: 18, designation: "SSE", email: "vgmagesh5@gmail.com" }
+		
+		this.empFormGroup.setValue(myEmp); // entire form update
+		this.empFormGroup.setValue(null);
+		
+		this.empFormGroup.patchValue(myEmp); // partial form update
+		
+		
+		Employee :
+		
+		this.empFG = new FormGroup({		
+			name: new FormControl(''),
+			age: new FormControl(''),
+			designation: new FormControl(''),
+			salary: new FormControl(''),
+			skills: new FormGroup({
+				name: new FormControl(''),
+				pl: new FormControl(''),
+			})			
+		})
+		
+		
+		this.empFG.value
+		
+			name : '',
+			age: '',
+			designation: '',
+			salary: '',
+			skills: {
+				name: '',
+				pl: ''
+			}
+			
+	Pipes: 
+	
+		Angular itself comes with many internal pipes
+		
+			uppercase,
+			lowercase,			
+			json,
+			
+			
+			
+		myString = "test";
+		
+		{{ myString }}   => test
+		
+		
+		{{ myString | uppercase }} => TEST
+		
+		{{ myString | uppercase | lowercase }} => test
+		
+		Pipes with INPUT:
+		
+			date,
+			currency
+			
+			{{ sal | currency:'INR' }}}
+			
+			{{ myDate | date:'' }}
+			
+			
+	Debugging:
+
+		Using browser:
+				webpack => . => src => project structure
+				
+		Using VSCode Plugin
+		
+			Debugger for chrome
+			
+				find your application port 
+				
+					4200
+					
+				
+			
+		
+		
+		
+		
+		
+			
 		

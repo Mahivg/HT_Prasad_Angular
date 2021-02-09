@@ -11,6 +11,7 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { RouterModule, Routes } from '@angular/router';
 import { ErrorPageComponent } from './error-page/error-page.component';
 import { AuthGaurd } from './shared/auth.gaurd';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 const appRoutes: Routes = [
   {
@@ -49,7 +50,9 @@ const appRoutes: Routes = [
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

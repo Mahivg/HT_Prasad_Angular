@@ -9,7 +9,7 @@ import { MyFirstService } from './shared/my-first.service';
 import { RouterModule, Routes } from '@angular/router';
 import { Route } from '@angular/compiler/src/core';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 const appRoutes: Routes = [
@@ -47,7 +47,8 @@ const appRoutes: Routes = [
   imports: [
     BrowserModule,
     RouterModule.forRoot(appRoutes),
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   // providers: [MyFirstService],
   providers: [],

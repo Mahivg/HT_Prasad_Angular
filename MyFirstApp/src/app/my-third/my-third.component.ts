@@ -13,6 +13,14 @@ export class MyThirdComponent implements OnInit, OnDestroy {
   @Output()
   public myEvent = new EventEmitter<string>();
 
+  public myString: string = "TEST";
+
+  public todayDate: Date = new Date();
+
+  public salary: number = 25000;
+
+  public myObj  = { name: 'Magesh', age: 13 };
+
   constructor() {
 
    }

@@ -6,3 +6,122 @@
   [toMyChild]="myObj"
   (myEvent)="callFromChild($event)"
 ></app-my-third> -->
+
+<div class="m-2">
+  <h2>Employee details</h2>
+  <form
+    #empForm="ngForm"
+    [formGroup]="empFormGroup"
+    (ngSubmit)="onFormSubmit()"
+  >
+    <div class="form-group">
+      <label class="control-label">Name</label>
+      <input
+        class="form-control"
+        id="name"
+        name="name"
+        type="text"
+        formControlName="name"
+        required
+        minlength="3"
+        maxlength="10"
+      />
+      <div class="m-2" *ngIf="empForm.submitted">
+        <p
+          class="text-danger"
+          *ngIf="
+            empFormGroup.controls['name'].errors &&
+            empFormGroup.controls['name'].errors.required
+          "
+        >
+          *Name should not be empty
+        </p>
+        <p
+          class="text-danger"
+          *ngIf="
+            empFormGroup.controls['name'].errors &&
+            empFormGroup.controls['name'].errors.minlength
+          "
+        >
+          *Name should have more than 3 letter
+        </p>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label">Age</label>
+      <input
+        class="form-control"
+        id="age"
+        name="age"
+        type="number"
+        min="18"
+        max="45"
+        formControlName="age"
+      />
+      <!-- <div class="m-2">
+        <p class="text-danger">* Age must be greater than or equal to 18</p>
+      </div> -->
+    </div>
+    <div class="form-group">
+      <label class="control-label">Desingation</label>
+      <input
+        class="form-control"
+        id="designation"
+        name="designation"
+        type="text"
+        formControlName="designation"
+      />
+    </div>
+    <div class="form-group">
+      <label class="control-label">Email</label>
+      <input
+        class="form-control"
+        id="email"
+        name="email"
+        type="email"
+        email
+        formControlName="email"
+      />
+      <div class="m-2" *ngIf="empForm.submitted">
+        <p
+          class="text-danger"
+          *ngIf="
+            empFormGroup.controls['email'].errors &&
+            empFormGroup.controls['email'].errors.email
+          "
+        >
+          *Enter valid email
+        </p>
+      </div>
+    </div>
+    <ng-container [formGroup]="empFormGroup.controls['address']">
+      <h2>Address</h2>
+      <div class="form-group">
+        <label class="control-label"> Line1</label>
+        <input
+          class="form-control"
+          id="line1"
+          name="line1"
+          type="text"
+          formControlName="line1"
+        />
+      </div>
+      <div class="form-group">
+        <label class="control-label">Line2</label>
+        <input
+          class="form-control"
+          id="line2"
+          name="line2"
+          type="text"
+          formControlName="line2"
+        />
+      </div>
+    </ng-container>
+    <div class="form-group text-center">
+      <button class="btn btn-primary" type="submit" [disabled]="!empForm.valid">
+        Submit
+      </button>
+      <!-- <button class="btn btn-primary" type="submit">Submit</button> -->
+    </div>
+  </form>
+</div>

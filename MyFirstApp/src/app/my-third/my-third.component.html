@@ -3,3 +3,15 @@
 <button (click)="sendMessage()" class="btn btn-warning">
   Send Msg to Parent
 </button>
+
+<div>
+  <h3>Expression : {{ 1 + 1 }}</h3>
+
+  <h3>String : {{ myString | lowercase | uppercase }}</h3>
+
+  <h3>Salary : {{ salary | currency: "USD" }}</h3>
+
+  <h3>Today Date : {{ todayDate | date: "fullDate" }}</h3>
+
+  <h3>MyOBJ : {{ myObj | json }}</h3>
+</div>
