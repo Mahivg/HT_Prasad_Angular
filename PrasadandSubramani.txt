@@ -1140,7 +1140,7 @@ WWW => World wide web
 				],
 				providers: []
 	
-attributeDirective	
+	AttributeDirective	
 	<h1 showGreen></h1>		
 		el: ElementRef
 		
@@ -1414,10 +1414,55 @@ attributeDirective
 				
 					4200
 					
+	Custom Directive, Pipes
+	
+		myHover -> attribute directive
+		
+		myLoop -> Structral directive
+		
+		limitTo -> pipes
+
+	
+
+	HTTP Calls:
+	
+		Basically to fetch data fron outside source
+		
+		
+		
+		Back end Part: 
+		
+		localhost:4500/v1/api/employees
+			{ 			
+				employees: [ 
+					{
+
+					},
+					{
+
+					},
+					{
+
+					},
+					{
+
+					}
+				]
 				
+			}
+		
+		
+		Intergrating Http Calls
+		
+		HTTP Calls
+			GET -> fetch
+			POST -> adding new
+			PUT -> update
+			DELETE  -> delete
+		
+			1.import { HttpClientModule} from '@angular/common/http';
 			
-		
-		
+			2. Create a mapping models as needed
 		
 		
 		

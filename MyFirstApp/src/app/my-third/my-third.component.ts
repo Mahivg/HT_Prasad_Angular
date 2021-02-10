@@ -13,7 +13,7 @@ export class MyThirdComponent implements OnInit, OnDestroy {
   @Output()
   public myEvent = new EventEmitter<string>();
 
-  public myString: string = "TEST";
+  public myString: string = "1234567890";
 
   public todayDate: Date = new Date();
 
@@ -21,9 +21,7 @@ export class MyThirdComponent implements OnInit, OnDestroy {
 
   public myObj  = { name: 'Magesh', age: 13 };
 
-  constructor() {
-
-   }
+  constructor() {  }
 
   ngOnInit(): void {
       console.log(this.myObj1);

@@ -10,6 +10,12 @@ import { RouterModule, Routes } from '@angular/router';
 import { Route } from '@angular/compiler/src/core';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MyHoverDirective } from './shared/directives/myHover.directive';
+import { MyLoopDirective } from './shared/directives/my-loop.directive';
+import { LimitToPipe } from './shared/pipes/limitTo.pipe';
+
+import { HttpClientModule} from '@angular/common/http';
+import { MyFourthComponent } from './my-fourth/my-fourth.component';
 
 
 const appRoutes: Routes = [
@@ -27,6 +33,10 @@ const appRoutes: Routes = [
     component: MyThirdComponent
   },
   {
+    path: 'fourth',
+    component: MyFourthComponent
+  },
+  {
     path: '', // default route
     redirectTo: 'first',
     pathMatch: 'full'
@@ -42,13 +52,18 @@ const appRoutes: Routes = [
     MyTestComponent,
     MySecondComponent,
     MyThirdComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    MyHoverDirective,
+    MyLoopDirective,
+    LimitToPipe,
+    MyFourthComponent
   ],
   imports: [
     BrowserModule,
     RouterModule.forRoot(appRoutes),
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   // providers: [MyFirstService],
   providers: [],
