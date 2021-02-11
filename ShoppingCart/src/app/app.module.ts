@@ -12,6 +12,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { ErrorPageComponent } from './error-page/error-page.component';
 import { AuthGaurd } from './shared/auth.gaurd';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ProductsModule } from './product/product.module';
 
 const appRoutes: Routes = [
   {
@@ -19,15 +20,6 @@ const appRoutes: Routes = [
     component: LoginComponent
   },
   {
-    path: 'products',
-    component: ProductListComponent,
-    canActivate: [AuthGaurd]
-  },
-  {
-    path: 'products/:id',
-    component: ProductDetailComponent,
-    canActivate: [AuthGaurd]
-  }, {
     path: '',
     redirectTo: 'login',
     pathMatch: 'full'
@@ -41,8 +33,6 @@ const appRoutes: Routes = [
   declarations: [
     AppComponent,
     LoginComponent,
-    ProductListComponent,
-    ProductDetailComponent,
     CartListComponent,
     CheckoutComponent,
     NavBarComponent,
@@ -52,7 +42,8 @@ const appRoutes: Routes = [
     BrowserModule,
     RouterModule.forRoot(appRoutes),
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    ProductsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

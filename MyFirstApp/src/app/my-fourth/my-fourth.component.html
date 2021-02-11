@@ -1,16 +1,24 @@
 <div class="m-2">
   <div>
-    <button class="btn btn-primary m-2">Get Users</button>
-    <button class="btn btn-warning m-2">Post Users</button>
+    <button class="btn btn-primary m-2" (click)="getUsers()">Get Users</button>
+    <button class="btn btn-warning m-2" (click)="addPosts()">
+      (HTTP_Post) Posts Object
+    </button>
     <button class="btn btn-success m-2">Put Users</button>
     <button class="btn btn-danger m-2">Delete User</button>
   </div>
 
   <div class="m-2">
     <div class="form-group">
-      <label class="control-label"> User ID</label>
-      <input type="text" class="form-control" />
+      <label class="control-label"> User ID </label>
+      <input type="text" class="form-control" #userId />
     </div>
-    <button class="btn btn-primary m-2">Get User</button>
+    <button class="btn btn-primary m-2" (click)="getUserById()">
+      Get User By Id
+    </button>
+
+    <button class="btn btn-danger m-2" (click)="deteletPost()">
+      Delete Post
+    </button>
   </div>
 </div>

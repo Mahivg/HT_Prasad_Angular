@@ -1251,7 +1251,9 @@ WWW => World wide web
 			
 				Observe
 				
-				Observer				
+				Observer	
+
+				.subscribe(data => {}, err => {} , () => {})
 				
 			Listening component
 				
@@ -1452,17 +1454,39 @@ WWW => World wide web
 			}
 		
 		
-		Intergrating Http Calls
+	Intergrating Http Calls
 		
 		HTTP Calls
-			GET -> fetch
-			POST -> adding new
-			PUT -> update
-			DELETE  -> delete
-		
+			GET -> fetch -> simply gets data from db
+				https://jsonplaceholder.typicode.com/users => returns a collection
+				
+				https://jsonplaceholder.typicode.com/users/1 => it returns user data who is having id as 1
+			POST -> adding new => Pass payload
+			PUT -> update => pass Payload
+			DELETE  -> delete => no payload
+				https://jsonplaceholder.typicode.com/posts/1 =>
+				
+				{ 
+					id: '1',
+					name: '',
+					active: 'N'					
+				} => soft delete
+				
+			Http calls :
+			
+				u need pass headers
+				
+				authToken: 'JWT'
+				
+				
+				
 			1.import { HttpClientModule} from '@angular/common/http';
 			
 			2. Create a mapping models as needed
+			
+	Angualr HTTP requests made up of Observables
+	
+		
 		
 		
 		

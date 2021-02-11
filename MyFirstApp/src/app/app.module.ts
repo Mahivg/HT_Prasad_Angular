@@ -37,6 +37,10 @@ const appRoutes: Routes = [
     component: MyFourthComponent
   },
   {
+    path: 'error',
+    component: PageNotFoundComponent
+  },
+  {
     path: '', // default route
     redirectTo: 'first',
     pathMatch: 'full'
