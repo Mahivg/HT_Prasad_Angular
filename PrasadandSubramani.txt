@@ -1484,7 +1484,27 @@ WWW => World wide web
 			
 			2. Create a mapping models as needed
 			
-	Angualr HTTP requests made up of Observables
+		
+		Angualr HTTP requests made up of Observables
+	
+	
+	
+	Deployment
+	
+	
+		ng serve => locally build and run
+		
+		
+		For production deployment
+		
+			ng build --prod
+		
+			Build it and get production files
+			
+				users.com => 
+			
+					index.html => head => <scirpt> <styles>
+					some js and css
 	
 		
 		
